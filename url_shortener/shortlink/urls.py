@@ -10,7 +10,7 @@ Paths:
 from django.contrib import admin
 from django.urls import path
 from shortener.views import root, decode_url, encode_url
-
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path("", root, name="root"),
