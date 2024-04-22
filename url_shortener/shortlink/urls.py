@@ -9,11 +9,15 @@ Paths:
 """
 from django.contrib import admin
 from django.urls import path
-from shortener.views import decode_url, encode_url
+from shortener.views import root, decode_url, encode_url
 
 
 urlpatterns = [
+    path("", root, name="root"),
     path("admin/", admin.site.urls),
     path("api/decode/", decode_url, name="decode"),
     path("api/encode/", encode_url, name="encode"),
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
+
