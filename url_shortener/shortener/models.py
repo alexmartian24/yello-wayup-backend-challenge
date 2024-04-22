@@ -6,6 +6,7 @@ Model for the URLMapping class.
 
 from django.db import models
 
+
 class URLMapping(models.Model):
     """
     URLMapping model class.

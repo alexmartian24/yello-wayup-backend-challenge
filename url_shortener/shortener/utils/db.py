@@ -11,7 +11,7 @@ from .hasher import generate_hash
 from django.conf import settings
 
 
-BASE_URL = "https://short.est"
+BASE_URL = settings.BASE_URL
 
 
 class URLMappingNotFound(Exception):
@@ -37,10 +37,11 @@ def create_url(original_url: str) -> str:
     """
     Create a URLMapping instance with the original URL.
 
-    If a URLMapping instance with the original URL already exists, it returns the encoded URL.
+    If a URLMapping instance with the original URL already exists,
+    it returns the encoded URL.
 
-    Additionally, collision likelihood is low. Further work could be done to check if
-    there is a collision before creating the new URLMapping instance.
+    Additionally, collision likelihood is low. Further work could be done to
+    check if there is a collision before creating the new URLMapping instance.
 
     Args:
         original_url (str): The original URL.

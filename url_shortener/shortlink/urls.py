@@ -5,7 +5,7 @@ Paths:
     - /: Root path
     - admin/: Django admin site
     - api/decode/: Decodes the encoded url
-    - api/encode/: Encodes the original url    
+    - api/encode/: Encodes the original url
 """
 from django.contrib import admin
 from django.urls import path
@@ -20,4 +20,3 @@ urlpatterns = [
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
-
