@@ -17,6 +17,7 @@ class URLTestCase(TestCase):
       - test_validation_result_get_code: Test ValidationResult get_code method.
       - test_validate_url: Test validate_url method.
       - test_validate_url_invalid: Test validate_url method.
+      - test_validate_url_invalid_char: Test validate_url method.
       - test_validate_url_empty: Test validate_url method.
       - test_validate_url_none: Test validate_url method.
     """
@@ -76,6 +77,18 @@ class URLTestCase(TestCase):
         This method will test the validate_url method of URL model.
         """
         url = "www.example.com"
+        result = validate_url(url)
+        self.assertFalse(result)
+        self.assertEqual(result.message, "Invalid URL")
+        self.assertEqual(result.code, 400)
+
+    def test_validate_url_invalid_char(self):
+        """
+        Test case for validate_url method.
+
+        This method will test the validate_url method of URL model.
+        """
+        url = "www.example.com/{}"
         result = validate_url(url)
         self.assertFalse(result)
         self.assertEqual(result.message, "Invalid URL")

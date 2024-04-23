@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+*.py[cod]
+*.egg
+build
+htmlcov
+
+*.db
+*.sqlite3
+venv/
+
+__pycache__
+
+.env

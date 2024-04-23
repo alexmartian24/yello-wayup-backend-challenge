@@ -17,6 +17,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from .utils.db import create_url, get_url, URLMappingNotFound
 from .utils.url import validate_url
 
+
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def root(request: Request) -> Response:
@@ -58,6 +59,7 @@ def encode_url(request: Request) -> Response:
         )
     encoded_url = create_url(original_url)
     return Response({"shortened_url": encoded_url})
+
 
 @api_view(["POST"])
 @authentication_classes([JWTAuthentication])
