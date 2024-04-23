@@ -31,3 +31,7 @@ ShortLink is a URL shortening service where you enter a URL such as https://yell
 
 ## Submission Process:
 * Please submit your code in a new GitHub repository. You can start by forking this repository into your account and then create a clone of it locally.
+
+## View Submission:
+
+To view the project and the project readme, enter the url_shortener directory.
