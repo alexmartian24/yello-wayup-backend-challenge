@@ -5,9 +5,10 @@ Model for the URLMapping class.
 """
 
 from django.db import models
+from django_prometheus.models import ExportModelOperationsMixin
 
 
-class URLMapping(models.Model):
+class URLMapping(ExportModelOperationsMixin("url"), models.Model):
     """
     URLMapping model class.
 
